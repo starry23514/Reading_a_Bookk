@@ -3,37 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My First Web Page</title>
+        <title>Search Book</title>
+        <link rel="stylesheet" href="css/libraryCSS.css">
     </head>
     <body>
-
-    <header class="navbar">
-        <div class="logo">Bookstore</div>
+    <div class="header">
+        <h1>Search</h1>
+    </div>
+    <div class="container"> <!--Search bar-->
         <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Search by title, author, or genre...">
-            <button onelick="searchBooks()">Search</button>
+            <button id="search-button">Search</button>
         </div>
-    </header>
+    
+        <div class="results" id="results"></div>
 
-    <!-- 2. Main Library Container -->
-    <main class="library-container">
-        <!-- Sidebar for Categories -->
-        <aside class="sidebar">
-            <h3>Categories</h3>
-            <ul>
-                <li onclick="filterCategory('all')">All Books</li>
-                <li onclick="filterCategory('fiction')">Fiction</li>
-                <li onclick="filterCategory('non-fiction')">Non-Fiction</li>
-                <li onclick="filterCategory('sci-fi')">Sci-Fi</li>
-            </ul>
-        </aside>
-
-        <!-- Book Grid -->
-        <section class="book-grid" id="bookGrid">
-            <!-- Book items will be injected here by JavaScript -->
-        </section>
-    </main>
-
+        <div id="pagniation" class="pagniation"></div>
+    </div>
+    <script src="Javascript/libraryJS.js"></script>
 
     </body>
 </html>
