@@ -1,0 +1,10 @@
+.body {
+  background-color: blue;
+}
+
+.navbar-toggler-icon {
+  background-color: #faa243; /* Change to desired color */
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
