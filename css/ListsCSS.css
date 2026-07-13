@@ -41,3 +41,30 @@ input {
        justify-content: space-around;
 
 }
+#book-list {
+       display: flex;
+       flex-direction: column;
+       list-style: none;
+       overflow: hidden;
+       word-wrap: break-word;
+       background-color: #fff;
+       color: #333;
+
+}
+#book-list > section {
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+       text-align: center;
+       border-bottom: 1px solid #ccc;
+       padding: 10px;
+}
+.btn {
+       background-color: darkblue;
+       border: none;
+       color: white;
+       margin-bottom: 20px;
+       padding: 10px 20px;
+       cursor: pointer;
+}
+
