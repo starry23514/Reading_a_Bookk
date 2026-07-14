@@ -1,8 +1,23 @@
 const title = document.getElementById("title");
 const author = document.getElementById("author");
-const genre = document.getElementById("genre");
+const notes = document.getElementById("notes");
+const chapter = document.getElementById("chapter");
 const bookList = document.getElementById("book-list");
 const btn = document.querySelector(".btn");
+
+// Validate chapter input to allow only numbers
+chapter.addEventListener("input", () => {
+    let value = chapter.value;
+    
+    // Only numbers and 1 dp allowed 
+    const regex = /^\d*\.?\d*$/; 
+    const isValid = regex.test(value);
+
+    if (!isValid) {
+        // Strip out invalid characters
+        chapter.value = value.slice(0, -1);
+    }
+});
 
 function removeBook(bookRow) {
     const confirmed = confirm("Are you sure you want to remove this book?");
@@ -13,7 +28,7 @@ function removeBook(bookRow) {
 
 btn.addEventListener('click',  function(e) {
         e.preventDefault();
-        if (title.value == "" && author.value == "" && genre.value == "") {
+        if (title.value == "" && author.value == "" && notes.value == "" && chapter.value == "") {
             alert("Please enter at least one search criteria.");
             return;
         } else {
@@ -30,10 +45,15 @@ btn.addEventListener('click',  function(e) {
             newAuthor.innerHTML = author.value;
             newRow.appendChild(newAuthor);
 
-            // Creating new genre
+            // Creating new additional notes/comments
             const newGenre = document.createElement("div");
-            newGenre.innerHTML = genre.value;
+            newGenre.innerHTML = notes.value;
             newRow.appendChild(newGenre);
+
+            // Creating new chapter
+            const newChapter = document.createElement("div");
+            newChapter.innerHTML = chapter.value;
+            newRow.appendChild(newChapter);
 
             // Creating remove button
             const removeBtn = document.createElement("button");
@@ -50,6 +70,7 @@ btn.addEventListener('click',  function(e) {
             // Clear the form
             title.value = "";
             author.value = "";
-            genre.value = "";
+            notes.value = "";
+            chapter.value = "";
         }
 })
