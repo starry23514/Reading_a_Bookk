@@ -14,7 +14,7 @@ chapter.addEventListener("input", () => {
     const isValid = regex.test(value);
 
     if (!isValid) {
-        // Strip out invalid characters
+        // Take out invalid characters
         chapter.value = value.slice(0, -1);
     }
 });
@@ -45,16 +45,15 @@ btn.addEventListener('click',  function(e) {
             newAuthor.innerHTML = author.value;
             newRow.appendChild(newAuthor);
 
-            // Creating new additional notes/comments
-            const newGenre = document.createElement("div");
-            newGenre.innerHTML = notes.value;
-            newRow.appendChild(newGenre);
-
             // Creating new chapter
             const newChapter = document.createElement("div");
             newChapter.innerHTML = chapter.value;
             newRow.appendChild(newChapter);
 
+            // Creating new additional notes/comments
+            const newGenre = document.createElement("div");
+            newGenre.innerHTML = notes.value;
+            newRow.appendChild(newGenre);
             // Creating remove button
             const removeBtn = document.createElement("button");
             removeBtn.innerHTML = "Remove";
