@@ -5,26 +5,17 @@ const chapter = document.getElementById("chapter");
 const bookList = document.getElementById("book-list");
 const btn = document.querySelector(".btn");
 
-// Validate chapter input to allow only numbers
+// Validate chapter input
 chapter.addEventListener("input", () => {
-    let value = chapter.value;
-    
-    // Only numbers and 1 dp allowed 
-    const regex = /^\d*\.?\d*$/; 
-    const isValid = regex.test(value);
+    const value = chapter.value;
 
-    if (!isValid) {
-        // Take out invalid characters
-        chapter.value = value.slice(0, -1);
+    // Only numbers and 1 decimal point allowed
+    const regex = /^\d*\.?\d*$/;
+
+    if (!regex.test(value)) {
+        alert("Only numbers and one decimal point are allowed.");
     }
 });
-
-function removeBook(bookRow) {
-    const confirmed = confirm("Are you sure you want to remove this book?");
-    if (confirmed) {
-        bookRow.remove();
-    }
-}
 
 btn.addEventListener('click',  function(e) {
         e.preventDefault();
