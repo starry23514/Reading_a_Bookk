@@ -10,7 +10,9 @@
         <link rel="stylesheet" href="css/loginCSS.css">
     </head>
 <body>
-    <!--Navigation-->
+    <!--This is the navigation bar. When on mobile, it will collapse into a hamburger menu-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="/Users/meigan/Library/CloudStorage/OneDrive-EpsomGirlsGrammarSchool/12DIT/YR12_DIT_AS91896_AS91897/website/index.html">Reading a Bookk</a>
@@ -28,7 +30,7 @@
                 </li>
                 
                 <li class="nav-item">
-                  <a class="nav-link" href="login.html">Profile</a>
+                  <a class="nav-link" href="/Users/meigan/Library/CloudStorage/OneDrive-EpsomGirlsGrammarSchool/12DIT/YR12_DIT_AS91896_AS91897/website/login.html">Profile</a>
                 </li>
                 
                 <li class="nav-item">
@@ -66,21 +68,6 @@
                         <span class="btn-text">Sign In</span>
                     </button>
                 </form>
-                
-                <div class="social-login">
-                    <div class="social-title">Or continue with</div>
-                    <div class="social-buttons">
-                        <div class="social-btn google" onclick="socialLogin('google')">
-                            <i class="fab fa-google"></i>
-                        </div>
-                        <div class="social-btn facebook" onclick="socialLogin('facebook')">
-                            <i class="fab fa-facebook-f"></i>
-                        </div>
-                        <div class="social-btn twitter" onclick="socialLogin('twitter')">
-                            <i class="fab fa-twitter"></i>
-                        </div>
-                    </div>
-                </div>
                 
                 <div class="form-switch">
                     Don't have an account? <a href="#" onclick="showSignup()">Create one</a>
@@ -124,20 +111,6 @@
                     </button>
                 </form>
                 
-                <div class="social-login">
-                    <div class="social-title">Or sign up with</div>
-                    <div class="social-buttons">
-                        <div class="social-btn google" onclick="socialLogin('google')">
-                            <i class="fab fa-google"></i>
-                        </div>
-                        <div class="social-btn facebook" onclick="socialLogin('facebook')">
-                            <i class="fab fa-facebook-f"></i>
-                        </div>
-                        <div class="social-btn twitter" onclick="socialLogin('twitter')">
-                            <i class="fab fa-twitter"></i>
-                        </div>
-                    </div>
-                </div>
                 
                 <div class="form-switch">
                     Already have an account? <a href="#" onclick="showLogin()">Sign in</a>
