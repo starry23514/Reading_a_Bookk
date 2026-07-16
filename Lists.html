@@ -44,20 +44,21 @@
         <form id="book-form">
             <div>
                     <label for="title">Book Title: </label>
-                    <input type="text" id="title" name="title">
+                    <input type="text" id="title" name="title" placeholder="Enter the book title">
             </div>
             <div>
                     <label for="author">Book Author: </label>
-                    <input type="text" id="author" name="author">
+                    <input type="text" id="author" name="author" placeholder="Enter the book author">
             </div>
             
             <div>
                     <label for="chapter">Chapter Currently On: </label>
-                    <input type="text" id="chapter" name="chapter">
+                    <input type="text" id="chapter" name="chapter" placeholder="Enter the chapter number. Only numbers and 1 decimal place allowed.">
             </div>
             <div>
-                    <label for="notes"> Notes/Comments: </label>
-                    <input type="text" id="notes" name="notes">
+                    <label for="notes"> Notes/Comments: </label> <span id="characterCount">200 characters remaining</span>
+                    <input type="text" id="notes" name="notes" maxlength="200" placeholder="Enter any notes or comments about the book">
+                
             </div>
             <button type="submit" class="btn">Add Book</button>
         </form>

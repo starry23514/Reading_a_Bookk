@@ -1,6 +1,8 @@
 const title = document.getElementById("title");
 const author = document.getElementById("author");
 const notes = document.getElementById("notes");
+const characterCount = document.getElementById("characterCount");
+const limit = 200;
 const chapter = document.getElementById("chapter");
 const bookList = document.getElementById("book-list");
 const btn = document.querySelector(".btn");
@@ -25,6 +27,14 @@ function removeBook(bookRow) {
         bookRow.remove();
     }
 }
+
+// Character count for notes input
+// Show the initial count
+notes.addEventListener("input", () => {
+    characterCount.textContent =
+        `${limit - notes.value.length} characters remaining`;
+});
+
 
 btn.addEventListener('click',  function(e) {
         e.preventDefault();
