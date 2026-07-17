@@ -81,5 +81,6 @@ btn.addEventListener('click',  function(e) {
             author.value = "";
             notes.value = "";
             chapter.value = "";
+            characterCount.textContent = `${limit} characters remaining`;
         }
 })

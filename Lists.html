@@ -40,45 +40,69 @@
   </div>
     </nav>
 
+<!-- Form for adding a book to the list -->
    <section class="container">
-        <form id="book-form">
-            <div>
-                    <label for="title">Book Title: </label>
-                    <input type="text" id="title" name="title" placeholder="Enter the book title">
+        <form id="book-form"> 
+            <div class="container"> 
+              <div class="row">
+                <div class="col-sm-3">
+                      <label for="title">Book Title: </label>
+                </div>
+                    <div class="col-8">
+                      <input type="text" id="title" name="title" placeholder="Enter the book title"> 
+                    </div>
+              </div>
+              <!--Author-->
+              <div class="row">
+                <div class="col-sm-3">
+                  <label for="author">Book Author: </label>
+                </div>
+                  <div class="col-8">
+                          <input type="text" id="author" name="author" placeholder="Enter the book author">
+                  </div>
+              </div>
+              <!--Chapter Currently On-->
+              <div class="row"> 
+                <div class="col-sm-3">
+                  <label for="chapter">Chapter Currently On: </label>
+                </div>
+                <div class="col-8">
+                          <input type="text" id="chapter" name="chapter" placeholder="Enter the chapter number. Only numbers and 1 decimal place allowed.">
+                </div>
+              </div>
+              <!--Notes-->
+              <div class="row"> 
+                <div class="col-sm-3">
+                  <label for="notes"> Notes/Comments: </label> <span id="characterCount">200 characters remaining</span>
+                </div>
+                <div class="col-8">
+                      <input type="text" id="notes" name="notes" maxlength="200" placeholder="Enter any notes or comments about the book">
+                </div>
+              </div>
+              <div class="col-md-auto">
+                <button type="submit" class="btn">Add Book</button>
+              </div>
+          
             </div>
-            <div>
-                    <label for="author">Book Author: </label>
-                    <input type="text" id="author" name="author" placeholder="Enter the book author">
-            </div>
-            
-            <div>
-                    <label for="chapter">Chapter Currently On: </label>
-                    <input type="text" id="chapter" name="chapter" placeholder="Enter the chapter number. Only numbers and 1 decimal place allowed.">
-            </div>
-            <div>
-                    <label for="notes"> Notes/Comments: </label> <span id="characterCount">200 characters remaining</span>
-                    <input type="text" id="notes" name="notes" maxlength="200" placeholder="Enter any notes or comments about the book">
-                
-            </div>
-            <button type="submit" class="btn">Add Book</button>
+          </div>
         </form>
 
-        <section>
-                <section class="table">
-                    <section class="table-section">
-                        <div>Title</div>
-                        <div>Author</div>
-                        <div>Chapter Currently On</div>
-                        <div>Notes</div>
-                    </section>
-                </section>
-        </section>
-    </section>
-
-    <section id="book-list">
-
-    </section>
-
+        <div class="container text-center">
+          <div class="row row-cols-auto">
+                <div class="table">
+                    <div class="table-section">
+                        <div class="col">Title</div>
+                        <div class="col">Author</div>
+                        <div class="col">Chapter Currently On</div>
+                        <div class="col">Notes</div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+  </section>
+    <div class="container text-center">
+      <div id="book-list"></div>
+    </div>
     <script src="/Users/meigan/Library/CloudStorage/OneDrive-EpsomGirlsGrammarSchool/12DIT/YR12_DIT_AS91896_AS91897/website/Javascript/ListsJS.js"></script>
     
 
