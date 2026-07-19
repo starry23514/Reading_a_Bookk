@@ -1,11 +1,20 @@
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const resultsContainer = document.getElementById("results");
+const myParagraph = document.getElementById('myParagraph');
 
 // Variables for pagination
 let currentPage = 1;
 let booksPerPage = 25; // 5 rows x 5 books
 let booksData = [];
+//paragraph visibility toggle based on search input
+searchInput.addEventListener('input', function() {
+  if (searchInput.value.trim() !== '') {
+    myParagraph.classList.add('hidden');
+  } else {
+    myParagraph.classList.remove('hidden');
+  }
+});
 
 
 // Function to fetch books

@@ -5,6 +5,14 @@ body {
   background-color: #a8a8a8;
   color: #333;
 }
+#myParagraph {
+  display: block; /* Ensures it is visible initially */
+  transition: opacity 0.3s ease;
+}
+
+.hidden {
+  display: none !important;
+}
 
 .header {
   height: 25vh;
