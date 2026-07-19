@@ -7,14 +7,24 @@ const myParagraph = document.getElementById('myParagraph');
 let currentPage = 1;
 let booksPerPage = 25; // 5 rows x 5 books
 let booksData = [];
-//paragraph visibility toggle based on search input
+// Paragraph visibility toggle based on the search input
 searchInput.addEventListener('input', function() {
   if (searchInput.value.trim() !== '') {
     myParagraph.classList.add('hidden');
   } else {
+    // Shows the paragraph again
     myParagraph.classList.remove('hidden');
+    
+    // Clear the book data arrays
+    booksData = [];
+    currentPage = 1;
+    
+    // Wipe out the content
+    resultsContainer.innerHTML = "";
+    document.getElementById("pagination").innerHTML = "";
   }
 });
+
 
 
 // Function to fetch books
