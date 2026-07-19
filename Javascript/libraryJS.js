@@ -12,7 +12,7 @@ searchInput.addEventListener('input', function() {
   if (searchInput.value.trim() !== '') {
     myParagraph.classList.add('hidden');
   } else {
-    // Shows the paragraph again
+    // Fades the paragraph back in
     myParagraph.classList.remove('hidden');
     
     // Clear the book data arrays

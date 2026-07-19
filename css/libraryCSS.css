@@ -6,13 +6,16 @@ body {
   color: #333;
 }
 #myParagraph {
-  display: block; /* Ensures it is visible initially */
-  transition: opacity 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.hidden {
-  display: none !important;
+#myParagraph.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
+
 
 .header {
   height: 25vh;
