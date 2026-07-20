@@ -6,7 +6,7 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> <!--Bootstrap-->
-            <link rel="stylesheet" href="/Users/meigan/Library/CloudStorage/OneDrive-EpsomGirlsGrammarSchool/12DIT/YR12_DIT_AS91896_AS91897/website/css/ListsCSS.css">
+            <link rel="stylesheet" href="css/ListsCSS.css">
             </head>
             <title>readingabookk</title>
         </head>
@@ -16,93 +16,87 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">Reading a Bookk</a>
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Login.html">Login</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Reading a Bookk</a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-
-<!-- Form for adding a book to the list -->
-   <section class="container">
-        <form id="book-form"> 
-            <div class="container"> 
-              <div class="row">
-                <div class="col-sm-3">
-                      <label for="title">Book Title: </label>
-                </div>
-                    <div class="col-8">
-                      <input type="text" id="title" name="title" placeholder="Enter the book title"> 
-                    </div>
-              </div>
-              <!--Author-->
-              <div class="row">
-                <div class="col-sm-3">
-                  <label for="author">Book Author: </label>
-                </div>
-                  <div class="col-8">
-                          <input type="text" id="author" name="author" placeholder="Enter the book author">
-                  </div>
-              </div>
-              <!--Chapter Currently On-->
-              <div class="row"> 
-                <div class="col-sm-3">
-                  <label for="chapter">Chapter Currently On: </label>
-                </div>
-                <div class="col-8">
-                          <input type="text" id="chapter" name="chapter" placeholder="Enter the chapter number. Only numbers and 1 decimal place allowed.">
-                </div>
-              </div>
-              <!--Notes-->
-              <div class="row"> 
-                <div class="col-sm-3">
-                  <label for="notes"> Notes/Comments: </label> <span id="characterCount">200 characters remaining</span>
-                </div>
-                <div class="col-8">
-                      <input type="text" id="notes" name="notes" maxlength="200" placeholder="Enter any notes or comments about the book">
-                </div>
-              </div>
-              <div class="col-md-auto">
-                <button type="submit" class="btn">Add Book</button>
-              </div>
-          
-            </div>
-          </div>
-        </form>
-
-        <div class="container text-center">
-          <div class="row row-cols-auto">
-                <div class="table">
-                    <div class="table-section">
-                        <div class="col">Title</div>
-                        <div class="col">Author</div>
-                        <div class="col">Chapter Currently On</div>
-                        <div class="col">Notes</div>
-                    </div>
-                  </div>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col text-start fs-3 fw-medium">
+                <h1>Book List</h1>
             </div>
         </div>
-  </section>
-    <div class="container text-center">
-      <div id="book-list"></div>
+        <div class="row">
+            <div class="col text-start fs-5 fw-light">
+                <p>Keep track of the books you're reading!</p>
+            </div>
+        </div>
     </div>
-    <script src="/Users/meigan/Library/CloudStorage/OneDrive-EpsomGirlsGrammarSchool/12DIT/YR12_DIT_AS91896_AS91897/website/Javascript/ListsJS.js"></script>
-    
+  <!-- Form for adding a book to the list -->
+    <section class="container">
+        <form id="book-form" class="row g-3">
+            <div class="col"> <!-- Form fields for book title, author, chapter, and notes -->
+              <label for="title" class="form-label title" aria-describedby="title">Book Title:</label>
+              <input type="text" id="title" name="title" placeholder="Enter the book title">
+            </div>
+            <div class="col">
+              <label for="author" class="form-label author" aria-describedby="author">Book Author:</label>
+              <input class="form-control" type="text" id="author" name="author" placeholder="Enter the book author">
+            </div>
+            <div class="col-md-2">
+              <label for="chapter" class="form-label" aria-describedby="chapter">Chapter Currently On:</label> 
+              <input type="text" class="form-control" id="chapter" name="chapter" placeholder="Enter the chapter number. Only numbers and 1 decimal place allowed.">
+            </div>
+          <div class="mb-3">
+            <label for="notes" class="form-label notes" aria-describedby="notes">Notes/Comments:</label> <span id="characterCount">200 characters remaining</span>
+            <textarea class="form-control" id="notes" name="notes" rows="3" maxlength="200" placeholder="Enter any notes or comments about the book"></textarea>
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-primary">Add Book</button>
+          </div>
+        </form>
+        <!-- Table to display the list of books -->
+          <div class="container text-center">
+            <div class="row row-cols-auto">
+                  <div class="table">
+                      <div class="table-section">
+                          <div class="col">Title</div>
+                          <div class="col">Author</div>
+                          <div class="col">Chapter Currently On</div>
+                          <div class="col">Notes</div>
+                      </div>
+                    </div>
+              </div>
+          </div>
+    </section>
+    <!-- Table to display the list of books -->
+      <div class="container text-center">
+        <div id="book-list"></div>
+      </div>
 
+      <script src="Javascript/ListsJS.js"></script>
 
-        <footer>
-                <p class="center">&copy; Meigan A</p>
-        </footer>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <footer>
+                    <p class="center">&copy; Meigan A</p>
+            </footer>
+          </div>
+        </div>
+      </div>
     </body>
 </html>
