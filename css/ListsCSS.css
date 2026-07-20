@@ -5,15 +5,12 @@
 }
 body{
        background-color: #a8a8a8;
-       background: linear-gradient(blueviolet, rgb(82, 5, 154));
-       align-items: center;
-       height: 100vh;
        font-family: Verdana, sans-serif;
        
 }
 .container {
        padding: 5px;
-       color: white;
+       color: black;
        position: relative;
 
 }
@@ -27,8 +24,9 @@ input {
        border-radius: 5px;
 }
 .table {
-       background: red;
+       background: #3d3d3d;
        width: 100%;
+       color: #fff;
 }
 .table-section{
        display: flex;
@@ -55,15 +53,16 @@ input {
        padding: 10px;
 }
 .btn {
-       background-color: darkblue;
+       background-color: #3d3d3e;
        border: none;
-       color: white;
+       color: #ededed;
        margin-bottom: 20px;
        padding: 10px 20px;
        cursor: pointer;
 }
-h1 {
+.container h1 {
        margin-top: 10px;
+       color: black;
 }
 p {
        margin-bottom: 10px;

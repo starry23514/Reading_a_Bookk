@@ -59,11 +59,45 @@ btn.addEventListener('click',  function(e) {
             const newChapter = document.createElement("div");
             newChapter.innerHTML = chapter.value;
             newRow.appendChild(newChapter);
+            
+            // Create notes section (hidden by default)
+            if (notes.value.trim() !== "") {
+                const notesContainer = document.createElement("div");
 
-            // Creating new additional notes/comments
-            const newGenre = document.createElement("div");
-            newGenre.innerHTML = notes.value;
-            newRow.appendChild(newGenre);
+                const showBtn = document.createElement("button");
+                showBtn.textContent = "Show Notes";
+                showBtn.classList.add("btn", "btn-sm");
+
+                const notesText = document.createElement("div");
+                notesText.textContent = notes.value;
+                notesText.style.display = "none";
+
+                const hideBtn = document.createElement("button");
+                hideBtn.textContent = "Hide Notes";
+                hideBtn.classList.add("btn", "btn-sm");
+                hideBtn.style.display = "none";
+
+                showBtn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    notesText.style.display = "block";
+                    hideBtn.style.display = "inline-block";
+                    showBtn.style.display = "none";
+                });
+
+                hideBtn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    notesText.style.display = "none";
+                    hideBtn.style.display = "none";
+                    showBtn.style.display = "inline-block";
+                });
+
+                notesContainer.appendChild(showBtn);
+                notesContainer.appendChild(notesText);
+                notesContainer.appendChild(hideBtn);
+
+                newRow.appendChild(notesContainer);
+            }
+
             // Creating remove button
             const removeBtn = document.createElement("button");
             removeBtn.innerHTML = "Remove";
@@ -83,4 +117,4 @@ btn.addEventListener('click',  function(e) {
             chapter.value = "";
             characterCount.textContent = `${limit} characters remaining`;
         }
-})
+});
