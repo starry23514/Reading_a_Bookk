@@ -1,121 +1,114 @@
-x // State management
-    let customQuiz = [];
-    let currentQuestionIndex = 0;
-    let score = 0;
-    let selectedOptionIndex = null;
+// State variables
+let quizDatabase = [];
+let currentQuestionIndex = 0;
+let score = 0;
 
-    const creatorPanel = document.getElementById('creator-panel');
-    const playerPanel = document.getElementById('player-panel');
-    const resultsPanel = document.getElementById('results-panel');
+// Toggle between Creator View and Player View
+function switchMode(mode) {
+    const creatorView = document.getElementById('creator-view');
+    const playerView = document.getElementById('player-view');
+    const navCreator = document.getElementById('nav-creator');
+    const navPlayer = document.getElementById('nav-player');
+
+    if (mode === 'creator') {
+        creatorView.classList.remove('hidden');
+        playerView.classList.add('hidden');
+        navCreator.classList.remove('secondary');
+        navPlayer.classList.add('secondary');
+    } else {
+        creatorView.classList.add('hidden');
+        playerView.classList.remove('hidden');
+        navCreator.classList.add('secondary');
+        navPlayer.classList.remove('secondary');
+        startQuiz();
+    }
+}
+
+// Process and store created questions
+function saveQuestion(event) {
+    event.preventDefault();
     
-    const quizForm = document.getElementById('quiz-form');
-    const quizStatus = document.getElementById('quiz-status');
-    const startQuizBtn = document.getElementById('start-quiz-btn');
+    const text = document.getElementById('q-text').value;
+    const optionInputs = document.querySelectorAll('.q-opt');
+    const options = Array.from(optionInputs).map(input => input.value);
+    const correctIndex = parseInt(document.getElementById('q-correct').value);
+
+    // Push new object structured for dynamic rendering
+    quizDatabase.push({ text, options, correctIndex });
+
+    // Reset the form input fields
+    document.getElementById('creator-form').reset();
+    updateCreatorUI();
+}
+
+// Update list of items created in Creator Mode
+function updateCreatorUI() {
+    document.getElementById('q-count').innerText = quizDatabase.length;
+    const container = document.getElementById('saved-questions-container');
+    container.innerHTML = '';
     
-    const playerQuestionTitle = document.getElementById('player-question-title');
-    const optionsContainer = document.getElementById('options-container');
-    const nextBtn = document.getElementById('next-btn');
-    const scoreText = document.getElementById('score-text');
-    const resetBtn = document.getElementById('reset-btn');
-
-    // --- PANEL 1: CREATOR LOGIC ---
-    quizForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const questionText = document.getElementById('question-text').value;
-        const optionInputs = document.querySelectorAll('.option-input');
-        const correctIndex = parseInt(document.getElementById('correct-answer').value);
-
-        // Gather all option string values
-        const options = Array.from(optionInputs).map(input => input.value);
-
-        // Push new structured question object to array
-        customQuiz.push({
-            question: questionText,
-            options: options,
-            correct: correctIndex
-        });
-
-        // Reset form inputs for next entry
-        quizForm.reset();
-        
-        // Update user status
-        quizStatus.textContent = `${customQuiz.length} question(s) added so far.`;
-        startQuizBtn.disabled = false;
+    quizDatabase.forEach((q, index) => {
+        const li = document.createElement('li');
+        li.innerText = `${index + 1}. ${q.text}`;
+        container.appendChild(li);
     });
+}
 
-    startQuizBtn.addEventListener('click', () => {
-        creatorPanel.classList.add('hidden');
-        playerPanel.classList.remove('hidden');
-        loadQuestion();
-    });
+// Initialization logic for Player Mode
+function startQuiz() {
+    const activeArea = document.getElementById('quiz-active');
+    const emptyArea = document.getElementById('quiz-empty');
 
-    // --- PANEL 2: PLAYER LOGIC ---
-    function loadQuestion() {
-        selectedOptionIndex = null;
-        nextBtn.textContent = "Submit Answer";
-        
-        const currentData = customQuiz[currentQuestionIndex];
-        playerQuestionTitle.textContent = `Q${currentQuestionIndex + 1}: ${currentData.question}`;
-        
-        // Clear old rendering
-        optionsContainer.innerHTML = '';
-
-        // Dynamically build option buttons
-        currentData.options.forEach((optionText, index) => {
-            const btn = document.createElement('button');
-            btn.className = 'option-btn';
-            btn.textContent = optionText;
-            btn.addEventListener('click', () => selectOption(index, btn));
-            optionsContainer.appendChild(btn);
-        });
+    if (quizDatabase.length === 0) {
+        activeArea.classList.add('hidden');
+        emptyArea.classList.remove('hidden');
+        return;
     }
 
-    function selectOption(index, clickedBtn) {
-        // Clear choices
-        document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
-        
-        // Save current user selection
-        selectedOptionIndex = index;
-        clickedBtn.classList.add('selected');
+    activeArea.classList.remove('hidden');
+    emptyArea.classList.add('hidden');
+    
+    currentQuestionIndex = 0;
+    score = 0;
+    document.getElementById('current-score').innerText = score;
+    renderPlayerQuestion();
+}
+
+// Render active question step
+function renderPlayerQuestion() {
+    if (currentQuestionIndex >= quizDatabase.length) {
+        alert(`Quiz completed! Final Score: ${score}/${quizDatabase.length}`);
+        switchMode('creator');
+        return;
     }
 
-    nextBtn.addEventListener('click', () => {
-        if (selectedOptionIndex === null) {
-            alert("Please pick an option first!");
-            return;
-        }
+    const currentQuestion = quizDatabase[currentQuestionIndex];
+    document.getElementById('player-question-text').innerText = currentQuestion.text;
+    
+    const optionsContainer = document.getElementById('player-options-container');
+    optionsContainer.innerHTML = '';
 
-        // Grade current selection
-        if (selectedOptionIndex === customQuiz[currentQuestionIndex].correct) {
-            score++;
-        }
-
-        // Advance index or finish quiz
-        currentQuestionIndex++;
-        if (currentQuestionIndex < customQuiz.length) {
-            loadQuestion();
-        } else {
-            showResults();
-        }
+    currentQuestion.options.forEach((optionText, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option-btn';
+        btn.innerText = optionText;
+        btn.onclick = () => handleAnswerSelection(index);
+        optionsContainer.appendChild(btn);
     });
+}
 
-    // --- PANEL 3: RESULTS LOGIC ---
-    function showResults() {
-        playerPanel.classList.add('hidden');
-        resultsPanel.classList.remove('hidden');
-        scoreText.textContent = `You scored ${score} out of ${customQuiz.length}!`;
+// Verify answers dynamically
+function handleAnswerSelection(selectedIndex) {
+    const currentQuestion = quizDatabase[currentQuestionIndex];
+    
+    if (selectedIndex === currentQuestion.correctIndex) {
+        score++;
+        document.getElementById('current-score').innerText = score;
+        alert("Correct!");
+    } else {
+        alert(`Wrong! Correct answer was: ${currentQuestion.options[currentQuestion.correctIndex]}`);
     }
 
-    resetBtn.addEventListener('click', () => {
-        // Full state reset back to start configuration
-        customQuiz = [];
-        currentQuestionIndex = 0;
-        score = 0;
-        
-        quizStatus.textContent = "0 questions added so far.";
-        startQuizBtn.disabled = true;
-        
-        resultsPanel.classList.add('hidden');
-        creatorPanel.classList.remove('hidden');
-    });
+    currentQuestionIndex++;
+    renderPlayerQuestion();
+}
