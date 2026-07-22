@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> <!--Bootstrap-->
+    <title>Quiz Maker</title>
+    <link rel="stylesheet" href="css/QuizCSS.css">
+</head>
+<body>
+    <!-- This is the navigation bar. When on mobile, it will collapse into a hamburger menu -->
+        <!-- Bootstrap JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+    <div class="container">
+        <!-- PANEL 1: QUIZ CREATOR -->
+        <div id="creator-panel">
+            <h2>Quiz Creator</h2>
+            <form id="quiz-form">
+                <div class="form-group">
+                    <label for="question-text">Question Text</label>
+                    <input type="text" id="question-text" placeholder="e.g., What is the capital of France?" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Answer Options</label>
+                    <div class="option-item"><input type="text" class="option-input" placeholder="Option A" required></div>
+                    <div class="option-item"><input type="text" class="option-input" placeholder="Option B" required></div>
+                    <div class="option-item"><input type="text" class="option-input" placeholder="Option C" required></div>
+                    <div class="option-item"><input type="text" class="option-input" placeholder="Option D" required></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="correct-answer">Correct Option Index</label>
+                    <select id="correct-answer">
+                        <option value="0">Option A</option>
+                        <option value="1">Option B</option>
+                        <option value="2">Option C</option>
+                        <option value="3">Option D</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="add-question-btn">Add Question to Quiz</button>
+            </form>
+            
+            <p class="status" id="quiz-status">0 questions added so far.</p>
+            <button id="start-quiz-btn" style="background-color: var(--success);" disabled>Start Playing Quiz</button>
+        </div>
+
+        <!-- PANEL 2: QUIZ PLAYER -->
+        <div id="player-panel" class="hidden">
+            <h2 id="player-question-title">Question goes here</h2>
+            <div id="options-container"></div>
+            <button id="next-btn">Submit Answer</button>
+        </div>
+
+        <!-- PANEL 3: RESULTS -->
+        <div id="results-panel" class="hidden">
+            <h2>Quiz Completed!</h2>
+            <p id="score-text"></p>
+            <button id="reset-btn">Make a New Quiz</button>
+        </div>
+    </div>
+    <script src="Javascript/QuizJS.js"></script>
+
+    </body>
+</html>
