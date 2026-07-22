@@ -23,7 +23,6 @@ function switchMode(mode) {
         startQuiz();
     }
 }
-
 // Process and store created questions
 function saveQuestion(event) {
     event.preventDefault();
@@ -41,17 +40,39 @@ function saveQuestion(event) {
     updateCreatorUI();
 }
 
-// Update list of items created in Creator Mode
+// Update list of items created in the creator mode
 function updateCreatorUI() {
     document.getElementById('q-count').innerText = quizDatabase.length;
     const container = document.getElementById('saved-questions-container');
     container.innerHTML = '';
-    
+
     quizDatabase.forEach((q, index) => {
         const li = document.createElement('li');
-        li.innerText = `${index + 1}. ${q.text}`;
+        li.className = "question-item";
+
+        // Question text
+        const text = document.createElement('span');
+        text.innerText = `${index + 1}. ${q.text}`;
+
+        // Remove button
+        const removeBtn = document.createElement('button');
+        removeBtn.innerText = "Remove";
+        removeBtn.className = "remove-btn";
+        removeBtn.onclick = () => removeQuestion(index);
+
+        li.appendChild(text);
+        li.appendChild(removeBtn);
         container.appendChild(li);
     });
+}
+// remove question 
+function removeQuestion(index) {
+    const confirmDelete = confirm("Are you sure you want to remove this question?");
+
+    if (confirmDelete) {
+        quizDatabase.splice(index, 1);
+        updateCreatorUI();
+    }
 }
 
 // Initialization logic for Player Mode
@@ -81,7 +102,6 @@ function renderPlayerQuestion() {
         switchMode('creator');
         return;
     }
-
     const currentQuestion = quizDatabase[currentQuestionIndex];
     document.getElementById('player-question-text').innerText = currentQuestion.text;
     
