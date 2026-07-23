@@ -125,16 +125,6 @@ body {
   background-color: #aaa;
   cursor: not-allowed;
 }
-.img{
-  animation-name: myAnimation;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
+img{
   opacity: 0.9;
-}
-#myImage {
-    animation-timing-function: ease;  
-}
-@keyframes myAnimation {
-  from {left: 0px;}
-  to {right: 300px;}
 }
