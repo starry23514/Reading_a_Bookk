@@ -12,29 +12,30 @@
 <body>
     <!--This is the navigation bar. When on mobile, it will collapse into a hamburger menu-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Reading a Bookk</a>
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" href="index.html">Home</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="Lists.html">Lists</a>
-                </li>
-                
-                <li class="nav-item">
-                  <a class="nav-link" href="Login.html">Profile</a>
-                </li>
-            </ul>
-          </div>
-      </div>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Reading a Bookk</a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Lists.html">Lists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Quiz.html">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Login.html">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
     
     <div class="container">
@@ -42,7 +43,7 @@
             <!-- Login Form -->
             <div class="form-container active" id="loginForm">
                 <h1 class="form-title">Welcome Back</h1>
-                <p class="form-subtitle">Sign in to your account to continue your journey</p>
+                <p class="form-subtitle">Sign in back to your account</p>
                 
                 <form id="loginFormSubmit">
                     <div class="form-group">
@@ -73,7 +74,6 @@
             <!-- Signup Form -->
             <div class="form-container" id="signupForm">
                 <h1 class="form-title">Create Account</h1>
-                <p class="form-subtitle">Join thousands of users and start your journey today</p>
                 
                 <form id="signupFormSubmit">
                     <div class="form-group">
@@ -96,27 +96,18 @@
                         <i class="fas fa-lock"></i>
                     </div>
                     
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="terms" required>
-                        <label for="terms">I agree to the <a href="#" style="color: #3b82f6; font-weight: 600;">Terms of Service</a> and <a href="#" style="color: #3b82f6; font-weight: 600;">Privacy Policy</a></label>
-                    </div>
-                    
                     <button type="submit" class="btn-primary">
                         <i class="fas fa-spinner loading"></i>
                         <span class="btn-text">Create Account</span>
                     </button>
                 </form>
-                
-                
-                <div class="form-switch">
+                <div class="form-switch text-center">
                     Already have an account? <a href="#" onclick="showLogin()">Sign in</a>
                 </div>
             </div>
-            
             <!-- Forgot Password Form -->
             <div class="form-container" id="forgotForm">
                 <h1 class="form-title">Reset Password</h1>
-                <p class="form-subtitle">Enter your email address and we'll send you instructions to reset your password</p>
                 
                 <form id="forgotFormSubmit">
                     <div class="form-group">
