@@ -1,8 +1,9 @@
-Name:  
-Meigan 
 Purpose:  
+
 This document will guide you on how to run Reading a  Bookk.  
+
 Date:  
+
 27/7/26 
 
 Step 1. 
