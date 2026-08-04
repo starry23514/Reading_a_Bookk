@@ -4,13 +4,13 @@
        box-sizing: border-box;
 }
 body{
-       background-color: #a8a8a8;
+       background-color: #ededed;
        font-family: Verdana, sans-serif;
        
 }
 .container {
        padding: 5px;
-       color: black;
+       color: #321f41;
        position: relative;
 
 }
@@ -41,7 +41,7 @@ input {
        overflow: hidden;
        word-wrap: break-word;
        background-color: #fff;
-       color: #333;
+       color: #564169;
 
 }
 #book-list > section {
@@ -53,7 +53,7 @@ input {
        padding: 10px;
 }
 .btn {
-       background-color: #3d3d3e;
+       background-color: #dba267;
        border: none;
        color: #ededed;
        margin-bottom: 20px;
@@ -62,7 +62,7 @@ input {
 }
 .container h1 {
        margin-top: 10px;
-       color: black;
+       color: #564169;
 }
 p {
        margin-bottom: 10px;

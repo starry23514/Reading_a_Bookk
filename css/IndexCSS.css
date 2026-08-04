@@ -2,14 +2,14 @@ body {
   font-family: Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #a8a8a8;
-  color: #333;
+  background-color: #ededed;
+  color: #321f41;
 }
 #myParagraph {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  color: #333;
+  color: #321f41;
 }
 
 #myParagraph.hidden {
@@ -19,9 +19,10 @@ body {
 
 
 .header {
-  color: white;
+  color: #321f41;
+  font-family: Verdana, sans-serif;
   margin-top: 30px;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); */
 }
 
 .container {
@@ -51,13 +52,14 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background-color: #333;
+  background-color: #dba267;
   color: #fff;
   transition: background-color 0.3s;
 }
 
 .search-bar button:hover {
-  background-color: #555;
+  background-color: #d0791d;
+;
 }
 
 /* Results section */
@@ -112,17 +114,17 @@ body {
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  background-color: #333;
+  background-color: #dba267;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .pagination button:hover {
-  background-color: #555;
+  background-color: #d0791d;
 }
 
 .pagination button[disabled] {
-  background-color: #aaa;
+  background-color: #413649;
   cursor: not-allowed;
 }
