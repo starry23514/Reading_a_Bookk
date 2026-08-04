@@ -7,7 +7,7 @@ Date:
 27/7/26 
 
 Step 1. 
-- Open “website” (not “Practice AS91896”) folder in  “YR12_DIT_AS91896_AS91897” and click index.html 
+- Open “Reading_a_Bookk” (not “Practice AS91896” or "website") folder in  “YR12_DIT_AS91896_AS91897” and click index.html 
 Step 2. 
 - Click on start/run/open index.html 
 Step 3. 
@@ -21,7 +21,7 @@ Note: If you ever see this in the development tools in  any page of the website,
 “ Unsafe attempt to load URL file:/// _____file name____  from frame with URL file:///______file name______ 'file:'  URLs are treated as unique security origins.”
 
 RELOAD THE PAGE.
-THE WEBSITE WORKS FINE  EVEN WITH OR WITHOUT THIS MESSAGE. (IDK why  get this message appears even though the website  works fine and disappears after reloading…) 
+THE WEBSITE WORKS FINE WITH OR WITHOUT THIS MESSAGE. (IDK why  get this message appears even though the website  works fine and disappears after reloading…) 
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
