@@ -1,18 +1,11 @@
-:root {
-    --primary: #4f46e5;
-    --bg: #f3f4f6;
-    --card: #ffffff;
-    --text: #1f2937;
-}
 body {
     font-family: Verdana, sans-serif;
     background-color: #a8a8a8;
-    color: var(--text);
+    color: #564169;
     justify-content: center;
 }
 .container {
-    background: var(--card);
-    background-color: #e3e3e3;
+    background-color: #ededed;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -26,7 +19,6 @@ body {
 }
 .AddQuizbtn {
     background: #dba267;
-    border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: opacity 0.2s;
@@ -73,11 +65,11 @@ input[type="text"], select {
     align-items: center;
     padding: 10px;
     margin: 10px 0;
-    background: #f4f4f4;
+    background: #ededed;
     border-radius: 8px;
 }
 .remove-btn {
-    background-color: #e74c3c;
+    background-color: #ee912d;
     color: white;
     border: none;
     padding: 8px 14px;
@@ -89,7 +81,7 @@ input[type="text"], select {
 }
 
 .remove-btn:hover {
-    background-color: #c0392b;
+    background-color: #dba267;
     transform: scale(1.05);
 }
 
