@@ -4,13 +4,13 @@
        box-sizing: border-box;
 }
 body{
-       background-color: #a8a8a8;
+       background-color: #dcd4dd;
        font-family: Verdana, sans-serif;
        
 }
 .container {
        padding: 5px;
-       color: black;
+       color: #321f41;
        position: relative;
 
 }
@@ -24,7 +24,7 @@ input {
        border-radius: 5px;
 }
 .table {
-       background: #3d3d3d;
+       background: #5d486d;
        width: 100%;
        color: #fff;
 }
@@ -41,7 +41,7 @@ input {
        overflow: hidden;
        word-wrap: break-word;
        background-color: #fff;
-       color: #333;
+       color: #564169;
 
 }
 #book-list > section {
@@ -53,18 +53,33 @@ input {
        padding: 10px;
 }
 .btn {
-       background-color: #3d3d3e;
+       background-color: #e18626;
        border: none;
        color: #ededed;
        margin-bottom: 20px;
        padding: 10px 20px;
        cursor: pointer;
 }
+.btn:hover {
+       opacity: 0.9;
+       background-color: #dba267;
+}
 .container h1 {
        margin-top: 10px;
-       color: black;
+       color: #564169;
 }
 p {
        margin-bottom: 10px;
 }
+.navbar {
+       background-color: #321f41;
+       color: #fff;
+}
+.nav-link {
+       color: #fff;
+}
+.nav-link:hover{
+       color: #dba267;
+}
+
 
