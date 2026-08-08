@@ -71,4 +71,15 @@ input {
 p {
        margin-bottom: 10px;
 }
+.navbar {
+       background-color: #321f41;
+       color: #fff;
+}
+.nav-link {
+       color: #fff;
+}
+.nav-link:hover{
+       color: #dba267;
+}
+
 

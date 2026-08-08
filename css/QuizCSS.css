@@ -1,11 +1,11 @@
 body {
     font-family: Verdana, sans-serif;
-    background-color: #a8a8a8;
-    color: #564169;
+    background-color: #dcd4dd;
+    color: #321f41;
     justify-content: center;
 }
 .container {
-    background-color: #ededed;
+    background-color: #c6b9d1;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -22,9 +22,19 @@ body {
     border-radius: 6px;
     cursor: pointer;
     transition: opacity 0.2s;
+    border: 2px solid #321f41;
+;
 }
-button:hover { opacity: 0.9; }
-button.secondary { background: #6b7280; }
+.AddQuizbtn:hover { 
+    opacity: 0.9;
+    background-color: #e18626; 
+}
+button:hover { 
+    opacity: 0.9; 
+}
+button.secondary { 
+    background: #745b84; 
+}
 .form-group {
     margin-bottom: 15px;
 }
@@ -36,10 +46,16 @@ label {
 input[type="text"], select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #7d7f83;
+    border: 2px solid #fff;
     border-radius: 6px;
     box-sizing: border-box;
+    background-color: #f1eaf7ca;
 }
+.form-select{
+    background-color: #f1eaf7ca;
+    border: 2px solid #fff;
+}
+
 .option-row {
     display: flex;
     align-items: center;
@@ -47,13 +63,20 @@ input[type="text"], select {
     margin-bottom: 8px;
 }
 .quiz-option-btn {
-    background: #f9fafb;
+    background-color: #f1eaf7ca;
     color: var(--text);
-    border: 1px solid #e5e7eb;
+    border: 1px solid #321f41;
     text-align: left;
     margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
-.quiz-option-btn:hover { background: #f3f4f6; }
+.quiz-option-btn:hover { 
+    background: #f3f4f6;
+}
 #question-list {
     margin-top: 20px;
     border-top: 1px solid #e5e7eb;
@@ -65,7 +88,8 @@ input[type="text"], select {
     align-items: center;
     padding: 10px;
     margin: 10px 0;
-    background: #ededed;
+    background-color: #f1eaf7ca;
+    border: 2px solid #fff;
     border-radius: 8px;
 }
 .remove-btn {
@@ -87,4 +111,19 @@ input[type="text"], select {
 
 .remove-btn:active {
     transform: scale(0.95);
+}
+.navbar {
+       background-color: #321f41;
+       color: #fff;
+}
+.nav-link {
+       color: #fff;
+}
+.nav-link:hover{
+       color: #dba267;
+}
+
+#player-question-text {
+    margin-top: 15px;
+
 }
