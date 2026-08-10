@@ -12,17 +12,23 @@ Step 2.
 - Click on start/run/open index.html 
 Step 3. 
 - Click on run/start/open on browser (Chrome)
+
+Or
+
+Step 1. 
+Clone Reading_a_Bookk repo and open the website.
   
 Instructions on how to use the program: 
 Objective : Search books, add booklists, and the ability  to create quizzes 
 
-Note: If you ever see this in the development tools in  any page of the website,  
+Note: 
+1.
+If you ever see this in the development tools in  any page of the website,  
 
 “ Unsafe attempt to load URL file:/// _____file name____  from frame with URL file:///______file name______ 'file:'  URLs are treated as unique security origins.”
 
 RELOAD THE PAGE.
 THE WEBSITE WORKS FINE WITH OR WITHOUT THIS MESSAGE. (IDK why  get this message appears even though the website  works fine and disappears after reloading…) 
-
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Once you are in the home page, there are a few things  you can see that you could do form the navigation bar  (the links at the top of the page)!:
@@ -32,7 +38,8 @@ Once you are in the home page, there are a few things  you can see that you coul
 - Quiz (You can add/remove questions to make  a quiz) 
 - login/sign up page if you are wanting to  create account! If you create an account, your Lists  (book lists) and quiz questions will be saved!
   
-Note: Your added books in Lists and quizzes will not be  saved if you don’t have an account and the pages will  be empty once the page reloads! 
+Note: Your added books in Lists and quizzes will not be  saved if you don’t have an account and the pages will be empty once the page reloads!
+(As there is no backend or anything to store your quiz or lists, Lists and Quiz will become empty once reloaded)
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
