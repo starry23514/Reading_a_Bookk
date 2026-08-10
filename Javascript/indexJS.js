@@ -25,8 +25,6 @@ searchInput.addEventListener('input', function() {
   }
 });
 
-
-
 // Function to fetch books
 async function fetchBooks(query) {
     const apiUrl = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`;

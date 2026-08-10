@@ -27,15 +27,12 @@ function removeBook(bookRow) {
         bookRow.remove();
     }
 }
-
 // Character count for notes input
 // Show the initial count
 notes.addEventListener("input", () => {
     characterCount.textContent =
         `${limit - notes.value.length} characters remaining`;
 });
-
-
 btn.addEventListener('click',  function(e) {
         e.preventDefault();
         if (title.value == "" && author.value == "" && notes.value == "" && chapter.value == "") {
