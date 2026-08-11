@@ -7,7 +7,7 @@ Date:
 27/7/26 
 
 Step 1. 
-- Open “Reading_a_Bookk” (not “Practice AS91896” or "website") folder in  “YR12_DIT_AS91896_AS91897” and click index.html 
+- Open “website” (not “Practice AS91896” or other folders) folder in  “YR12_DIT_AS91896_AS91897” and click index.html 
 Step 2. 
 - Click on start/run/open index.html 
 Step 3. 
