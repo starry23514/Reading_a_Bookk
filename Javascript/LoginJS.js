@@ -88,7 +88,7 @@ function handleFormSubmit(form, loadingText) {
         btnText.textContent = originalText;
         
         if (form.id === 'loginFormSubmit') {
-            showSuccessMessage('Login successful! Redirecting...');
+            showSuccessMessage('Login successful!');
         } else if (form.id === 'signupFormSubmit') {
             showSuccessMessage('Account created successfully! Please check your email.');
         } else {
