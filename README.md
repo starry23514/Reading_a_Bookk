@@ -38,6 +38,8 @@ Once you are in the home page, there are a few things  you can see that you coul
 - Quiz (You can add/remove questions to make  a quiz) 
 - login/sign up page if you are wanting to  create account! If you create an account, your Lists  (book lists) and quiz questions will be saved!
   
+- When Logging in use: Email = banana@gmail.com Password= p4ssw0rd
+  
 Note: Your added books in Lists and quizzes will not be  saved if you don’t have an account and the pages will be empty once the page reloads!
 (As there is no backend or anything to store your quiz or lists, Lists and Quiz will become empty once reloaded)
 
@@ -75,4 +77,12 @@ In Quiz, you can create questions and test yourself to  know the book better for
 - Add 3 incorrect answers and 1 correct answer in  Options A,B,C,D 
 - Select the correct option. Eg. The answer is Guilt and  it was typed in slot Option A- the correct option you  select will be Option A. 
 - Click Add Question to Quiz.  
-- Repeat Steps 1-4 if you have multiple questions. - Once you are ready, at the top of the page click “Player  Mode” and start testing yourself! 
+- Repeat Steps 1-4 if you have multiple questions. - Once you are ready, at the top of the page click “Player  Mode” and start testing yourself!
+
+-------------------------------------------------------------------------------
+
+Login page 
+Note: Whether you make an account or not, nothings change. It is just a page where you can login/create an acount.
+
+When Logging in use: Email = banana@gmail.com Password= p4ssw0rd
+Boundaries: password needs to be 8 characters long.
