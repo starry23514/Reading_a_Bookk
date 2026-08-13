@@ -35,7 +35,7 @@ notes.addEventListener("input", () => {
 });
 btn.addEventListener('click',  function(e) {
         e.preventDefault();
-        if (title.value == "" && author.value == "" && notes.value == "" && chapter.value == "") {
+        if (title.value == "" || author.value == "" && notes.value == "" && chapter.value == "") {
             alert("Please enter at least one search criteria.");
             return;
         } else {
